@@ -1,0 +1,193 @@
+  /* color palette */
+
+  /* Antique Ruby: rgb(134,29,52) | #861D34 */
+  /* French raspberry: rgb(206,45,79) | #CE2D4F */
+  /* Light Pink: rgb(247,178,189) | #F7B2BD */
+  /* Space Cadet: rbg(20,27,65) | #141B41 */
+  /* Space Cadet - dark: rgb(18,25,64) | #121940  */
+  /* Glaucous: rgb(122,137,194) | #7A89C2 */
+  /* Wild Blue Yonder: rgb(171,180,216) #ABB4D8 */
+  /* ---------------------------------------------------------------------------------------------------------- */
+
+  /* fonts */
+  /* font-family: 'Kalam', cursive; */
+  /* font-family: 'Mali', cursive; */
+  /* font-family: 'Roboto', sans-serif; */
+
+
+
+
+  /* general ------------------------------------------------------------------------------------------*/
+
+  body {
+  	text-align: center;
+  	max-width: 60%;
+  	margin: 0 auto;
+  	font-family: 'Roboto', sans-serif;
+  }
+
+  hr {
+  	margin: 0%;
+  	color: #c92c4e;
+  	border: solid 2px;
+
+  }
+
+  .background-color {
+  	background:
+  		linear-gradient(0deg, rgba(20, 27, 65, 1) 0%, rgba(122, 137, 194, 1) 50%, rgba(20, 27, 65, 1) 100%);
+  	;
+  	margin: 0;
+  	padding: 25px 0;
+  }
+
+  /* Header ------------------------------------------------------------------------------------------*/
+
+  h1 {
+  	font-size: 50px;
+  	margin: 0%;
+  	padding: 15px 0 10px 0;
+  	font-weight: 500;
+  	color: #ABB4D8;
+  	font-family: 'Mali', cursive;
+  }
+
+  h2 {
+  	margin: 0%;
+  	padding-bottom: 25px;
+  	font-weight: 300;
+  	color: #ABB4D8;
+  	font-family: 'Kalam', cursive;
+
+  }
+
+  .searchbox {
+  	border-radius: 5px;
+  	border-radius: 5px;
+  	border: solid 2px #7A89C2;
+  	padding: 5px 10px;
+  	font-family: 'Roboto', sans-serif;
+  	font-size: 20px;
+  	line-height: 22px;
+  	font-weight: 600;
+  }
+
+  .input {
+  	background-color: rgb(247, 178, 189, 0.2);
+  	color: #ABB4D8;
+  	font-weight: 400;
+  }
+
+  .location {
+  	color: #861D34;
+  	background-color: rgb(247, 178, 189, 0.5);
+  }
+
+  .search {
+  	background-color: #861D34;
+  	color: #ABB4D8;
+  	font-weight: 400;
+  }
+
+  /* Main content ------------------------------------------------------------------------------------------*/
+  sup {
+  	font-size: 40px;
+  }
+
+  a {
+  	text-decoration: none;
+  	color: #7A89C2;
+  }
+
+  a:hover {
+  	color: #861D34;
+  }
+
+  .main-data {
+  	background-image: url(images/sunny.jpg);
+  	background-repeat: no-repeat;
+  	background-size: cover;
+  	margin: 0%;
+  	padding: 25px;
+  }
+
+  .card {
+  	margin: 0 auto;
+  	background-color: rgb(247, 178, 189, 0.5);
+  	/* background-color: rgb(206, 45, 79, 0.5); */
+  	color: #121940;
+  }
+
+  .temp-today {
+  	font-size: 90px;
+  	font-weight: 500;
+  	margin: 0;
+  	font-family: 'Mali', cursive;
+  }
+
+  .temp-day-night {
+  	font-size: 35px;
+  	margin: 0;
+  	/* color: #121940; */
+  	/* font-family: 'Kalam', cursive; */
+  }
+
+  .conditions {
+  	font-family: 'Kalam', cursive;
+  	font-size: 25px;
+  	text-transform: capitalize;
+  }
+
+  .humidity {
+  	font-size: 20px;
+  }
+
+  .cels {
+  	pointer-events: none;
+  	color: #121940;
+  }
+
+  .fahr {
+  	pointer-events: none;
+  	color: #121940;
+  }
+
+  /* Footer - next days ---------------------------------------------------------------------------------- */
+
+  .forecast-next-days {
+  	text-align: center;
+  	padding: 25px;
+  }
+
+  .temp-box {
+  	background-color: rgb(247, 178, 189, 0.2);
+  	border-right: solid #121940 1px;
+  	border-radius: 5px;
+  	padding: 20px 5px;
+  	font-weight: 600;
+  	color: #121940;
+  }
+
+  .weekday {
+  	font-size: 25px;
+  }
+
+  .icon {
+  	font-size: 30px;
+  }
+
+  .temp {
+  	font-size: 30px;
+  	font-weight: 500;
+  	color: #ABB4D8;
+  }
+
+  /* .temp-night {
+  	font-size: 18px;
+  	font-weight: 600;
+  } */
+
+  .table {
+  	max-width: 480px;
+  	margin: 0 auto;
+  }

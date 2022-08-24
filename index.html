@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://kit.fontawesome.com/1b38f62a40.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <!-- fonts -->
+    <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&display=swap" rel="stylesheet"> -->
+    <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&family=Mali:wght@300;400;500;600;700&display=swap" rel="stylesheet"> -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&family=Mali:wght@300;400;500;600;700&family=Roboto:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- ------------------------------------------------------------------ -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Weather App</title>
+  </head>
+  <body onload="setTemperature()">
+    <div class="container">
+      <div class="background-color">
+        <!-- Search box WORK ON-->
+
+        <form id="input-city">
+          <input
+            type="text"
+            name="location"
+            placeholder="Search for location"
+            class="searchbox input"
+            id="search-box"
+            onclick="resetInput()"
+            value=""
+          />
+<input type="submit" value="Search" class="searchbox search" />
+          <button class="searchbox location">
+            <i class="fa-solid fa-map-location-dot"></i>
+          </button>
+          
+        </form>
+
+        <!-- Location & Time -->
+        <h1>
+          <span id="city">Bogota</span>, <span id="country">Country</span>
+        </h1>
+        <h2>Tuesday, 2 Aug 23:30</h2>
+        <hr />
+        <div class="main-data">
+          <!-- Weather for today - results    WORK ON -->
+
+          <!-- <div class="main-data"> -->
+          <div class="card" style="width: 18rem">
+            <div class="card-body">
+              <div class="temp-today"><span id="main-temp">26</span><sup>
+                <a id="celsius" href="#" class="cels">°C</a>|<a id="fahrenheit" href="#">°F</a></a></sup>
+              </div>
+              <!-- <div class="temp-day-night">☀️<span id="temp-day">26</span>°|<span >18</span>°🌜</div> -->
+              <div class="conditions" id="weather-conditions">Mostly sunny</div>
+              <div class="humidity">Humidity: <span id="humidity">60%</span></div>
+            </div>
+          </div>
+          <!-- </div> -->
+          <!-- ===================================== -->
+
+          <!-- <div class="card mb-3" style="max-width: 450px;">
+  <div class="row g-0">
+    <div class="col-md-6">
+        <div class="temp-today">26°C</div> 
+        <div>Mostly sunny</div>
+    </div>
+    <div class="col-md-6">
+      <div class="card-body">
+        <img src="images/icon-transparent.png" alt="sunny" width="150px">
+        <div> Humidity 60%</div>
+      </div>
+    </div>
+  </div>
+</div> -->
+        </div>
+        <!-- Next 5 days -->
+        <hr />
+
+        <div class="forecast-next-days">
+          <div class="row justify-content-center table">
+            <div class="col-md me-2 temp-box">
+              <div class="weekday" id="day-one">Wed</div>
+              <div class="icon" id="icon-one">🌤️</div> 
+              <div class="temp" id="temp-one">25°</div>
+              <!-- <div class="temp-night">25°</div> -->
+            </div>
+            <div class="col-md me-2 temp-box">
+              <div class="weekday" id="day-two">Wed</div>
+              <div class="icon" id="icon-two">🌦️</div>  
+              <div class="temp" id="temp-two">23°</div>
+              <!-- <div class="temp-night">23°</div> -->
+            </div>
+            <div class="col-md me-2 temp-box">
+              <div class="weekday" id="day-three">Fri</div>
+              <div class="icon" id="icon-three">☀️</div>
+              <div class="temp" id="temp-three">27°</div>
+              <!-- <div class="temp-night">27°</div> -->
+            </div>
+            <div class="col-md me-2 temp-box">
+             <div class="weekday" id="day-four">Sat</div>
+              <div class="icon" id="icon-four">☀️</div>
+              <div class="temp" id="temp-four">29°</div>
+              <!-- <div class="temp-night">29°</div> -->
+            </div>
+            <div class="col-md me-2 temp-box">
+               <div class="weekday" id="day-five">Sun</div>
+              <div class="icon" id="icon-five">🌤️</div> 
+              <div class="temp" id="temp-five">28°</div>
+              <!-- <div class="temp-night">28°</div> -->
+            </div>
+          </div>
+        </div>
+        <!-- =============================================== -->
+      </div>
+    </div>
+    <script src="index.js"></script>
+  </body>
+</html>
