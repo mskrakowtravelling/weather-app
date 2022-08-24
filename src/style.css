@@ -104,7 +104,7 @@
   }
 
   .main-data {
-  	background-image: url(images/sunny.jpg);
+  	background-image: url(../images/sunny.jpg);
   	background-repeat: no-repeat;
   	background-size: cover;
   	margin: 0%;
@@ -114,7 +114,6 @@
   .card {
   	margin: 0 auto;
   	background-color: rgb(247, 178, 189, 0.5);
-  	/* background-color: rgb(206, 45, 79, 0.5); */
   	color: #121940;
   }
 
@@ -125,12 +124,12 @@
   	font-family: 'Mali', cursive;
   }
 
-  .temp-day-night {
+  /* .temp-day-night {
   	font-size: 35px;
   	margin: 0;
-  	/* color: #121940; */
-  	/* font-family: 'Kalam', cursive; */
-  }
+  	color: #121940;
+  	font-family: 'Kalam', cursive;
+  } */
 
   .conditions {
   	font-family: 'Kalam', cursive;
