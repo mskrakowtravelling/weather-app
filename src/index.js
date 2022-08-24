@@ -83,6 +83,11 @@ function showTemperature(response) {
   let windElement = document.querySelector("#wind");
   windElement.innerHTML = `${wind} km/h`;
 
+  let icon = response.data.list[0].weather[0].icon;
+  let iconElement = document.getElementById("weather-icon");
+  let iconSrc = `http://openweathermap.org/img/wn/${icon}@2x.png`;
+  iconElement.src = iconSrc;
+
   let city = response.data.city.name
   let cityElement = document.querySelector("#city");
   cityElement.innerHTML = city;
