@@ -46,11 +46,10 @@
             onclick="resetInput()"
             value=""
           />
-<input type="submit" value="Search" class="searchbox search" />
+          <input type="submit" value="Search" class="searchbox search" />
           <button class="searchbox location">
             <i class="fa-solid fa-map-location-dot"></i>
           </button>
-          
         </form>
 
         <!-- Location & Time -->
@@ -63,33 +62,40 @@
           <!-- Weather for today - results    WORK ON -->
 
           <!-- <div class="main-data"> -->
-          <div class="card" style="width: 18rem">
+          <!-- <div class="card" style="width: 18rem">
             <div class="card-body">
               <div class="temp-today"><span id="main-temp">26</span><sup>
                 <a id="celsius" href="#" class="cels">°C</a>|<a id="fahrenheit" href="#">°F</a></a></sup>
-              </div>
-              <!-- <div class="temp-day-night">☀️<span id="temp-day">26</span>°|<span >18</span>°🌜</div> -->
-              <div class="conditions" id="weather-conditions">Mostly sunny</div>
+              </div> -->
+          <!-- <div class="temp-day-night">☀️<span id="temp-day">26</span>°|<span >18</span>°🌜</div> -->
+          <!-- <div class="conditions" id="weather-conditions">Mostly sunny</div>
               <div class="humidity">Humidity: <span id="humidity">60%</span></div>
             </div>
-          </div>
+          </div> -->
           <!-- </div> -->
           <!-- ===================================== -->
 
-          <!-- <div class="card mb-3" style="max-width: 450px;">
-  <div class="row g-0">
-    <div class="col-md-6">
-        <div class="temp-today">26°C</div> 
-        <div>Mostly sunny</div>
-    </div>
-    <div class="col-md-6">
-      <div class="card-body">
-        <img src="images/icon-transparent.png" alt="sunny" width="150px">
-        <div> Humidity 60%</div>
-      </div>
-    </div>
-  </div>
-</div> -->
+          <div class="card mb-3" style="max-width: 450px">
+            <div class="row g-0">
+              <div class="col-md-6">
+                <div class="temp-today"><span id="main-temp">26</span><sup>
+                <a id="celsius" href="#" class="cels">°C</a>|<a id="fahrenheit" href="#">°F</a></a></sup>
+              </div>
+              <div class="humidity">Humidity: <span id="humidity">60%</span></div>
+                <div class="wind">Wind speed: <span id="wind">60%</span></div>
+              </div>
+              <div class="col-md-6">
+                <div class="card-body">
+                  <img
+                    src="images/icon-transparent.png"
+                    alt="sunny"
+                    width="150px"
+                  />
+                  <div class="conditions" id="weather-conditions">Mostly sunny</div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
         <!-- Next 5 days -->
         <hr />
@@ -98,13 +104,13 @@
           <div class="row justify-content-center table">
             <div class="col-md me-2 temp-box">
               <div class="weekday" id="day-one">Wed</div>
-              <div class="icon" id="icon-one">🌤️</div> 
+              <div class="icon" id="icon-one">🌤️</div>
               <div class="temp" id="temp-one">25°</div>
               <!-- <div class="temp-night">25°</div> -->
             </div>
             <div class="col-md me-2 temp-box">
               <div class="weekday" id="day-two">Wed</div>
-              <div class="icon" id="icon-two">🌦️</div>  
+              <div class="icon" id="icon-two">🌦️</div>
               <div class="temp" id="temp-two">23°</div>
               <!-- <div class="temp-night">23°</div> -->
             </div>
@@ -115,14 +121,14 @@
               <!-- <div class="temp-night">27°</div> -->
             </div>
             <div class="col-md me-2 temp-box">
-             <div class="weekday" id="day-four">Sat</div>
+              <div class="weekday" id="day-four">Sat</div>
               <div class="icon" id="icon-four">☀️</div>
               <div class="temp" id="temp-four">29°</div>
               <!-- <div class="temp-night">29°</div> -->
             </div>
             <div class="col-md me-2 temp-box">
-               <div class="weekday" id="day-five">Sun</div>
-              <div class="icon" id="icon-five">🌤️</div> 
+              <div class="weekday" id="day-five">Sun</div>
+              <div class="icon" id="icon-five">🌤️</div>
               <div class="temp" id="temp-five">28°</div>
               <!-- <div class="temp-night">28°</div> -->
             </div>
