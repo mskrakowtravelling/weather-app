@@ -109,7 +109,7 @@
   	background-repeat: no-repeat;
   	background-size: cover;
   	margin: 0%;
-  	padding: 25px;
+  	padding: 30px;
   }
 
   .card {
@@ -123,6 +123,7 @@
   	font-weight: 500;
   	margin: 0;
   	font-family: 'Mali', cursive;
+  	padding: 0 15px;
   }
 
   /* .temp-day-night {
@@ -191,4 +192,10 @@
   .table {
   	max-width: 480px;
   	margin: 0 auto;
+  }
+
+  .git-hub {
+  	text-align: center;
+  	color: #121940;
+  	font-size: large;
   }
