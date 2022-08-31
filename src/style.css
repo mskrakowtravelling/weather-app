@@ -37,6 +37,9 @@
   	background:
   		linear-gradient(0deg, rgba(20, 27, 65, 1) 0%, rgba(122, 137, 194, 1) 50%, rgba(20, 27, 65, 1) 100%);
   	;
+  	/* background-image: url(../images/cloudy.jpg);
+  	background-repeat: no-repeat;
+  	background-size: cover; */
   	margin: 0;
   	padding: 25px 0;
   }
@@ -83,10 +86,21 @@
   	background-color: rgb(247, 178, 189, 0.5);
   }
 
+  .location:hover {
+  	color: #ABB4D8;
+  	background-color: #861D34;
+  }
+
   .search {
   	background-color: #861D34;
   	color: #ABB4D8;
   	font-weight: 400;
+  }
+
+  .search:hover {
+  	background-color: #ABB4D8;
+  	color: #861D34;
+
   }
 
   /* Main content ------------------------------------------------------------------------------------------*/
@@ -105,7 +119,10 @@
   }
 
   .main-data {
-  	background-image: url(../images/sunny.jpg);
+  	/* background:
+  		linear-gradient(0deg, rgba(20, 27, 65, 1) 0%, rgba(122, 137, 194, 1) 50%, rgba(20, 27, 65, 1) 100%);
+  	; */
+  	background-image: url(../images/snowy.jpg);
   	background-repeat: no-repeat;
   	background-size: cover;
   	margin: 0%;
