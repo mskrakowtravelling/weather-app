@@ -36,15 +36,11 @@ function showCurrentDate() {
   let minutes = addZero(now.getMinutes());
 
   return `${day}, ${date} ${month} ${hours}:${minutes}`;
-}
 
+}
 let h2 = document.querySelector("h2");
 h2.innerHTML = showCurrentDate();
 
-function showDay() {
-  let now = new Date();
-  let
-}
 
 // Search engin return------------------------------------------------------------------------
 
