@@ -103,7 +103,7 @@
 
   /* Main content ------------------------------------------------------------------------------------------*/
   sup {
-  	font-size: 38px;
+  	font-size: 35px;
   	position: relative;
   	top: -30px;
   }
@@ -159,19 +159,19 @@
   	font-size: 20px;
   }
 
-  .time-and-conditions {
+  .conditions {
   	font-family: 'Kalam', cursive;
-
+  	font-size: 30px;
   	text-transform: capitalize;
   	list-style: none;
   }
 
-  .conditions {
-  	font-size: 25px;
-  }
-
   .local-time {
   	font-size: 20px;
+  }
+
+  .card-body {
+  	margin-top: 15px;
   }
 
   .cels {
@@ -185,7 +185,7 @@
   }
 
   #weather-icon {
-  	margin: -20px 0;
+  	margin: -18px 0;
   }
 
   /* Footer - next days ---------------------------------------------------------------------------------- */
