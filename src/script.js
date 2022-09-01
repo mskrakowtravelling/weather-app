@@ -1,10 +1,11 @@
+
 // current date
 showCurrentDate()
 function addZero(t) {
   return (t < 10 ? "0" : "") + t;
 }
 function showCurrentDate() {
-  let now = new Date();
+  let now = new Date(1662066000 * 1000);
 
   let days = [
     "Sunday",
@@ -41,7 +42,6 @@ function showCurrentDate() {
   h2.innerHTML = fullDate
   setTimeout(showCurrentDate, 1000);
 }
-
 // Search engin return------------------------------------------------------------------------
 
 // API key - weather--------------------------------------------------------------------------
