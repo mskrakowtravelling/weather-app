@@ -1,4 +1,5 @@
 // current date
+showCurrentDate()
 function addZero(t) {
   return (t < 10 ? "0" : "") + t;
 }
@@ -26,7 +27,7 @@ function showCurrentDate() {
     "Jun",
     "Jul",
     "Aug",
-    "Sept",
+    "Sep",
     "Oct",
     "Nov",
     "Dec",
@@ -35,12 +36,11 @@ function showCurrentDate() {
   let hours = addZero(now.getHours());
   let minutes = addZero(now.getMinutes());
 
-  return `${day}, ${date} ${month} ${hours}:${minutes}`;
-
+  let fullDate = `${day}, ${date} ${month} ${hours}:${minutes}`;
+  let h2 = document.querySelector("h2");
+  h2.innerHTML = fullDate
+  setTimeout(showCurrentDate, 1000);
 }
-let h2 = document.querySelector("h2");
-h2.innerHTML = showCurrentDate();
-
 
 // Search engin return------------------------------------------------------------------------
 
