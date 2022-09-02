@@ -190,35 +190,35 @@ let cel = document.querySelector("#celsius");
 cel.addEventListener("click", changetoCels);
 
 // forecast - weekdays
-function showDay(day) {
-  let days = [
-    "Sun",
-    "Mon",
-    "Tue",
-    "Wed",
-    "Thu",
-    "Fri",
-    "Sat",
-  ];
-  return days[day];
-}
-let today = new Date().getDay();
-let weekday1 = today < 6 ? today + 1 : 0;
-weekday1Element = document.querySelector("#day-one");
-weekday1Element.innerHTML = showDay(weekday1);
+// function showDay(day) {
+//   let days = [
+//     "Sun",
+//     "Mon",
+//     "Tue",
+//     "Wed",
+//     "Thu",
+//     "Fri",
+//     "Sat",
+//   ];
+//   return days[day];
+// }
+// let today = new Date().getDay();
+// let weekday1 = today < 6 ? today + 1 : 0;
+// weekday1Element = document.querySelector("#day-one");
+// weekday1Element.innerHTML = showDay(weekday1);
 
-let weekday2 = weekday1 < 6 ? weekday1 + 1 : 0;
-let weekday2Element = document.querySelector("#day-two");
-weekday2Element.innerHTML = showDay(weekday2);
+// let weekday2 = weekday1 < 6 ? weekday1 + 1 : 0;
+// let weekday2Element = document.querySelector("#day-two");
+// weekday2Element.innerHTML = showDay(weekday2);
 
-let weekday3 = weekday2 < 6 ? weekday2 + 1 : 0;
-let weekday3Element = document.querySelector("#day-three");
-weekday3Element.innerHTML = showDay(weekday3);
+// let weekday3 = weekday2 < 6 ? weekday2 + 1 : 0;
+// let weekday3Element = document.querySelector("#day-three");
+// weekday3Element.innerHTML = showDay(weekday3);
 
-let weekday4 = weekday3 < 6 ? weekday3 + 1 : 0;
-let weekday4Element = document.querySelector("#day-four");
-weekday4Element.innerHTML = showDay(weekday4);
+// let weekday4 = weekday3 < 6 ? weekday3 + 1 : 0;
+// let weekday4Element = document.querySelector("#day-four");
+// weekday4Element.innerHTML = showDay(weekday4);
 
-let weekday5 = weekday4 < 6 ? weekday4 + 1 : 0;
-let weekday5Element = document.querySelector("#day-five");
-weekday5Element.innerHTML = showDay(weekday5);
+// let weekday5 = weekday4 < 6 ? weekday4 + 1 : 0;
+// let weekday5Element = document.querySelector("#day-five");
+// weekday5Element.innerHTML = showDay(weekday5);
