@@ -5,7 +5,7 @@ function addZero(t) {
   return (t < 10 ? "0" : "") + t;
 }
 function showCurrentDate() {
-  let now = new Date(1662066000 * 1000);
+  let now = new Date();
 
   let days = [
     "Sunday",
@@ -87,7 +87,9 @@ function showTemperature(response) {
   let icon = response.data.list[0].weather[0].icon;
   let iconElement = document.getElementById("weather-icon");
   let iconSrc = `http://openweathermap.org/img/wn/${icon}@2x.png`;
+  let iconAlt = response.data.list[0].weather[0].description;
   iconElement.src = iconSrc;
+  iconElement.alt = iconAlt;
 
   let city = response.data.city.name
   let cityElement = document.querySelector("#city");
