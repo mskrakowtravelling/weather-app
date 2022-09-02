@@ -107,31 +107,29 @@ function showTemperature(response) {
 function setTemperature() {
   let inputCity = document.querySelector("#city");
   let apiKey = "8a5a5cc90e2c01a958e2254f16f6442f";
-  let cityName = inputCity.innerHTML;
+  let cityName = "Bogota";
   let units = "metric";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${cityName}&units=${units}&appid=${apiKey}`;
-
+  let urlPart = `https://api.openweathermap.org/data/2.5/forecast?`
+  let apiUrl = `${urlPart}q=${cityName}&units=${units}&appid=${apiKey}`;
   axios.get(apiUrl).then(showTemperature);
 }
 window.onload = setTemperature();
 
-function searchCity(event) {
-  event.preventDefault();
-  let searchInput = document.querySelector("#search-box");
-  let citySearch = `${searchInput.value}`;
-  document.getElementById("search-box").value = "";
-
+function searchCity(city) {
   let apiKey = "8a5a5cc90e2c01a958e2254f16f6442f";
-  let cityName = citySearch;
   let units = "metric";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${cityName}&units=${units}&appid=${apiKey}`;
-
-
+  let apiUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&units=${units}&appid=${apiKey}`;
   axios.get(apiUrl).then(showTemperature);
 }
 
+function handleSubmit(event) {
+  event.preventDefault();
+  let searchInput = document.querySelector("#search-box");
+  searchCity(searchInput.value);
+
+}
 let cityForm = document.querySelector("#input-city");
-cityForm.addEventListener("submit", searchCity);
+cityForm.addEventListener("submit", handleSubmit);
 
 // Geolocation
 function getMyPosition(position) {

@@ -37,13 +37,14 @@
 
         <form id="input-city">
           <input
-            type="text"
+            type="search"
             name="location"
             placeholder="Search for location"
             class="searchbox input"
             id="search-box"
             onclick="resetInput()"
             value=""
+            autocomplete="off"
           />
           <input type="submit" value="Search" class="searchbox search" />
           <button class="searchbox location">
@@ -53,7 +54,7 @@
 
         <!-- Location & Time -->
         <div class="header">
-          <h1><span id="city">Bogota</span>, <span id="country"></span></h1>
+          <h1><span id="city"></span>, <span id="country"></span></h1>
           <h2></h2>
         </div>
 
