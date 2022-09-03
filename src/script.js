@@ -50,7 +50,7 @@ function showTemperature(response) {
   let temperature = Math.round(response.data.list[0].main.temp);
   let temperatureElement = document.querySelector("#main-temp");
   temperatureElement.innerHTML = temperature;
-
+  celsiusTemperature = Math.round(response.data.list[0].main.temp);
   // let tempOne = Math.round(response.data.list[1].main.temp);
   // let tempOneElement = document.querySelector("#temp-one");
   // tempOneElement.innerHTML = tempOne
@@ -155,8 +155,8 @@ button.addEventListener("click", findLocation);
 function changetoFahr(event) {
   event.preventDefault();
   // temperature ============================================
+  let mainFtemp = Math.round((celsiusTemperature * 9) / 5 + 32);
   let mainTemp = document.querySelector("#main-temp");
-  let mainFtemp = Math.round((mainTemp.innerHTML * 9) / 5 + 32);
   mainTemp.innerHTML = mainFtemp;
   // let dayTemperature = document.querySelector("#temp-day");
   // dayTemperature.innerHTML = mainFtemp;
@@ -175,8 +175,7 @@ function changetoCels(event) {
   event.preventDefault();
   // temperature ============================================
   let mainTemp = document.querySelector("#main-temp");
-  let mainCtemp = Math.round(((mainTemp.innerHTML - 32) * 5) / 9);
-  mainTemp.innerHTML = mainCtemp;
+  mainTemp.innerHTML = celsiusTemperature;
   // let dayTemperature = document.querySelector("#temp-day");
   // dayTemperature.innerHTML = mainCtemp;
 
@@ -188,6 +187,8 @@ function changetoCels(event) {
 }
 let cel = document.querySelector("#celsius");
 cel.addEventListener("click", changetoCels);
+
+let celsiusTemperature = null;
 
 // forecast - weekdays
 // function showDay(day) {
