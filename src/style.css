@@ -174,12 +174,13 @@
   	margin-top: 15px;
   }
 
-  .cels {
+  .active {
   	color: #121940;
   }
 
-  .fahr {
+  .active:hover {
   	color: #121940;
+  	cursor: auto;
   }
 
   #weather-icon {

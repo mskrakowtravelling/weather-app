@@ -154,39 +154,31 @@ button.addEventListener("click", findLocation);
 // Celsius to Fahrenheit
 function changetoFahr(event) {
   event.preventDefault();
-  // temperature ============================================
+
   let mainFtemp = Math.round((celsiusTemperature * 9) / 5 + 32);
   let mainTemp = document.querySelector("#main-temp");
   mainTemp.innerHTML = mainFtemp;
-  // let dayTemperature = document.querySelector("#temp-day");
-  // dayTemperature.innerHTML = mainFtemp;
 
-  // units======================================================
-  let fahr = document.querySelector("#fahrenheit");
-  let cel = document.querySelector("#celsius");
-  fahr.classList.add("fahr");
-  cel.classList.remove("cels");
+  fahr.classList.add("active");
+  cel.classList.remove("active");
 }
-let fahr = document.querySelector("#fahrenheit");
-fahr.addEventListener("click", changetoFahr);
+
 
 // Fahrenheit to Celsius
 function changetoCels(event) {
   event.preventDefault();
-  // temperature ============================================
+
   let mainTemp = document.querySelector("#main-temp");
   mainTemp.innerHTML = celsiusTemperature;
-  // let dayTemperature = document.querySelector("#temp-day");
-  // dayTemperature.innerHTML = mainCtemp;
 
-  // units======================================================
-  let fahr = document.querySelector("#fahrenheit");
-  let cel = document.querySelector("#celsius");
-  fahr.classList.remove("fahr");
-  cel.classList.add("cels");
+  fahr.classList.remove("active");
+  cel.classList.add("active");
 }
 let cel = document.querySelector("#celsius");
 cel.addEventListener("click", changetoCels);
+
+let fahr = document.querySelector("#fahrenheit");
+fahr.addEventListener("click", changetoFahr);
 
 let celsiusTemperature = null;
 
