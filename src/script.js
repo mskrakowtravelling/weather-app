@@ -153,10 +153,10 @@ button.addEventListener("click", findLocation);
 
 // Celsius to Fahrenheit
 function changetoFahr(event) {
+  event.preventDefault();
   // temperature ============================================
   let mainTemp = document.querySelector("#main-temp");
-  let mainTempNum = parseInt(mainTemp.innerHTML, 10);
-  let mainFtemp = Math.round((mainTempNum * 9) / 5 + 32);
+  let mainFtemp = Math.round((mainTemp.innerHTML * 9) / 5 + 32);
   mainTemp.innerHTML = mainFtemp;
   // let dayTemperature = document.querySelector("#temp-day");
   // dayTemperature.innerHTML = mainFtemp;
@@ -172,10 +172,10 @@ fahr.addEventListener("click", changetoFahr);
 
 // Fahrenheit to Celsius
 function changetoCels(event) {
+  event.preventDefault();
   // temperature ============================================
   let mainTemp = document.querySelector("#main-temp");
-  let mainTempNum = parseInt(mainTemp.innerHTML, 10);
-  let mainCtemp = Math.round(((mainTempNum - 32) * 5) / 9);
+  let mainCtemp = Math.round(((mainTemp.innerHTML - 32) * 5) / 9);
   mainTemp.innerHTML = mainCtemp;
   // let dayTemperature = document.querySelector("#temp-day");
   // dayTemperature.innerHTML = mainCtemp;
