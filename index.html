@@ -30,7 +30,7 @@
     <link rel="stylesheet" href="src/style.css" />
     <title>Weather App</title>
   </head>
-  <body onload="setTemperature()">
+  <body>
     <div class="container">
       <div class="background-color">
         <!-- Search box -------------------------------------------------------------------->
@@ -42,7 +42,6 @@
             placeholder="Search for location"
             class="searchbox input"
             id="search-box"
-            onclick="resetInput()"
             value=""
             autocomplete="off"
           />
@@ -96,44 +95,21 @@
         <!-- Next 5 days -->
         <hr />
 
-        <!-- <div class="forecast-next-days">
-          <div class="row justify-content-center table">
-            <div class="col-md me-2 temp-box">
-              <div class="weekday" id="day-one">Wed</div>
-              <div class="icon" id="icon-one">🌤️</div>
-              <div class="temp" id="temp-one">25°</div>
-            </div>
-            <div class="col-md me-2 temp-box">
-              <div class="weekday" id="day-two">Wed</div>
-              <div class="icon" id="icon-two">🌦️</div>
-              <div class="temp" id="temp-two">23°</div>
-            </div>
-            <div class="col-md me-2 temp-box">
-              <div class="weekday" id="day-three">Fri</div>
-              <div class="icon" id="icon-three">☀️</div>
-              <div class="temp" id="temp-three">27°</div>
-            </div>
-            <div class="col-md me-2 temp-box">
-              <div class="weekday" id="day-four">Sat</div>
-              <div class="icon" id="icon-four">☀️</div>
-              <div class="temp" id="temp-four">29°</div>
-            </div>
-            <div class="col-md me-2 temp-box">
-              <div class="weekday" id="day-five">Sun</div>
-              <div class="icon" id="icon-five">🌤️</div>
-              <div class="temp" id="temp-five">28°</div>
-            </div>
-          </div>
-        </div> -->
+        <div class="forecast-next-days" id="forecast">
+          <!-- written in JS -->
+        </div>
         <!-- =============================================== -->
       </div>
     </div>
+
+    <!-- signature =========================================================== -->
     <footer>
       <p class="git-hub">
-        <a
+        Coded by Barbara Targosz,<a
           href="https://github.com/mskrakowtravelling/weather-app"
           target="_blank"
-          >Coded by Barbara Targosz GitHub repository</a
+        >
+          GitHub repository</a
         >
       </p>
     </footer>

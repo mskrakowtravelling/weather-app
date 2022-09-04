@@ -1,11 +1,16 @@
 
-// current date
-showCurrentDate()
+// current date ------------------------------------------------------------------------------------------
 function addZero(t) {
   return (t < 10 ? "0" : "") + t;
 }
-function showCurrentDate() {
-  let now = new Date();
+function showCurrentDate(time) {
+  let timeZoneName = time.data.timezone;
+
+  function convertTZ(date, tzString) {
+    return new Date((typeof date === "string" ? new Date(date) : date).toLocaleString("en-US", { timeZone: tzString }));
+  }
+
+  let now = convertTZ(new Date(), timeZoneName);
 
   let days = [
     "Sunday",
@@ -40,75 +45,129 @@ function showCurrentDate() {
   let fullDate = `${day}, ${date} ${month} ${hours}:${minutes}`;
   let h2 = document.querySelector("h2");
   h2.innerHTML = fullDate
-  setTimeout(showCurrentDate, 1000);
 }
-// Search engin return------------------------------------------------------------------------
 
+
+function getLocalDate(coordinates) {
+  lat = coordinates.lat;
+  lon = coordinates.lon;
+
+  let apiKey = "c95d60a1e3adbeb286133f1ebebc2579";
+  let units = "metric";
+  let urlEnd = "https://api.openweathermap.org/data/2.5/onecall?"
+  let apiUrl = `${urlEnd}lat=${lat}&lon=${lon}&units=${units}&appid=${apiKey}`;
+
+  axios.get(apiUrl).then(showCurrentDate);
+
+}
 // API key - weather--------------------------------------------------------------------------
+function showWeekday(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let weekday = date.getDay();
+  let weekdays = [
+    "Sun",
+    "Mon",
+    "Tue",
+    "Wed",
+    "Thu",
+    "Fri",
+    "Sat",
+  ];
+  return weekdays[weekday];
+
+}
+
+function displayForecast(response) {
+  let forecast = response.data.daily;
+  let forecastElement = document.querySelector("#forecast");
+
+  let forecastHTML = `<div class="row justify-content-center forecast">`
+
+  forecast.forEach(function (forecastDay, index) {
+    if (index < 5) {
+      forecastHTML = forecastHTML + `
+            <div class="col-2 temp-box">
+              <div class="weekday">${showWeekday(forecastDay.dt)}</div>
+              <img
+                src="http://openweathermap.org/img/wn/${forecastDay.weather[0].icon}@2x.png"
+                alt=""
+                width="55"
+                class="forecast-icon"
+              />
+              <div class="temp">
+                <span class="forecast-day">${Math.round(forecastDay.temp.day)}°<span class="forecast-night"
+                > | ${Math.round(forecastDay.temp.night)}°
+              </div>
+            </div> `;
+    }
+  });
+
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
+
+function getForecast(coordinates) {
+  lat = coordinates.lat;
+  lon = coordinates.lon;
+
+  let apiKey = "c95d60a1e3adbeb286133f1ebebc2579";
+  let units = "metric";
+  let urlEnd = "https://api.openweathermap.org/data/2.5/onecall?"
+  let apiUrl = `${urlEnd}lat=${lat}&lon=${lon}&units=${units}&appid=${apiKey}`;
+
+  axios.get(apiUrl).then(displayForecast);
+}
+
 function showTemperature(response) {
   console.log(response.data);
-  let temperature = Math.round(response.data.list[0].main.temp);
+  let temperature = Math.round(response.data.main.temp);
   let temperatureElement = document.querySelector("#main-temp");
   temperatureElement.innerHTML = temperature;
-  celsiusTemperature = Math.round(response.data.list[0].main.temp);
-  // let tempOne = Math.round(response.data.list[1].main.temp);
-  // let tempOneElement = document.querySelector("#temp-one");
-  // tempOneElement.innerHTML = tempOne
+  celsiusTemperature = Math.round(response.data.main.temp);
 
-  // let tempTwo = Math.round(response.data.list[2].main.temp);
-  // let tempTwoElement = document.querySelector("#temp-two");
-  // tempTwoElement.innerHTML = tempTwo;
-
-  // let tempThree = Math.round(response.data.list[2].main.temp);
-  // let tempThreeElement = document.querySelector("#temp-three");
-  // tempThreeElement.innerHTML = tempThree;
-
-  // let tempFour = Math.round(response.data.list[2].main.temp);
-  // let tempFourElement = document.querySelector("#temp-four");
-  // tempFourElement.innerHTML = tempFour;
-
-  // let tempFive = Math.round(response.data.list[2].main.temp);
-  // let tempFiveElement = document.querySelector("#temp-five");
-  // tempFiveElement.innerHTML = tempFive;
-
-  let conditions = response.data.list[0].weather[0].description;
+  let conditions = response.data.weather[0].description;
   let conditionsElement = document.querySelector("#weather-conditions");
   conditionsElement.innerHTML = conditions;
 
-  let humidity = response.data.list[0].main.humidity;
+  let humidity = response.data.main.humidity;
   let humidityElement = document.querySelector("#humidity");
   humidityElement.innerHTML = `${humidity}%`;
 
-  let windMs = response.data.list[0].wind.speed;
+  let windMs = response.data.wind.speed;
   let wind = Math.round(3.6 * windMs);
   let windElement = document.querySelector("#wind");
   windElement.innerHTML = `${wind} km/h`;
 
-  let icon = response.data.list[0].weather[0].icon;
+  let icon = response.data.weather[0].icon;
   let iconElement = document.getElementById("weather-icon");
   let iconSrc = `http://openweathermap.org/img/wn/${icon}@2x.png`;
-  let iconAlt = response.data.list[0].weather[0].description;
+  let iconAlt = response.data.weather[0].description;
   iconElement.src = iconSrc;
   iconElement.alt = iconAlt;
 
-  let city = response.data.city.name
+  let city = response.data.name;
   let cityElement = document.querySelector("#city");
   cityElement.innerHTML = city;
 
-  let countryCode = response.data.city.country;
+  let countryCode = response.data.sys.country;
   let countryName = new Intl.DisplayNames(
     ['en'], { type: 'region' });
   let country = countryName.of(countryCode);
   let countryElement = document.querySelector("#country");
   countryElement.innerHTML = country;
-
+  getForecast(response.data.coord);
+  getLocalDate(response.data.coord);
 }
 
+// Search engin return------------------------------------------------------------------------
 function searchCity(city) {
   let apiKey = "8a5a5cc90e2c01a958e2254f16f6442f";
   let units = "metric";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&units=${units}&appid=${apiKey}`;
+  let urlEnd = "https://api.openweathermap.org/data/2.5/weather?"
+  let apiUrl = `${urlEnd}q=${city}&units=${units}&appid=${apiKey}`;
+
   axios.get(apiUrl).then(showTemperature);
+  document.getElementById("search-box").value = "";
 }
 
 function handleSubmit(event) {
@@ -125,7 +184,7 @@ function getMyPosition(position) {
   let lon = position.coords.longitude;
   let apiKey = "8a5a5cc90e2c01a958e2254f16f6442f";
   let units = "metric";
-  let urlEnd = "https://api.openweathermap.org/data/2.5/forecast?"
+  let urlEnd = "https://api.openweathermap.org/data/2.5/weather?"
   let apiUrl = `${urlEnd}lat=${lat}&lon=${lon}&appid=${apiKey}&units=${units}`;
 
   axios.get(apiUrl).then(showTemperature);
@@ -151,7 +210,6 @@ function changetoFahr(event) {
   cel.classList.remove("active");
 }
 
-
 // Fahrenheit to Celsius
 function changetoCels(event) {
   event.preventDefault();
@@ -169,37 +227,6 @@ let fahr = document.querySelector("#fahrenheit");
 fahr.addEventListener("click", changetoFahr);
 
 let celsiusTemperature = null;
+
 searchCity("Oaxaca");
-// forecast - weekdays
-// function showDay(day) {
-//   let days = [
-//     "Sun",
-//     "Mon",
-//     "Tue",
-//     "Wed",
-//     "Thu",
-//     "Fri",
-//     "Sat",
-//   ];
-//   return days[day];
-// }
-// let today = new Date().getDay();
-// let weekday1 = today < 6 ? today + 1 : 0;
-// weekday1Element = document.querySelector("#day-one");
-// weekday1Element.innerHTML = showDay(weekday1);
-
-// let weekday2 = weekday1 < 6 ? weekday1 + 1 : 0;
-// let weekday2Element = document.querySelector("#day-two");
-// weekday2Element.innerHTML = showDay(weekday2);
-
-// let weekday3 = weekday2 < 6 ? weekday2 + 1 : 0;
-// let weekday3Element = document.querySelector("#day-three");
-// weekday3Element.innerHTML = showDay(weekday3);
-
-// let weekday4 = weekday3 < 6 ? weekday3 + 1 : 0;
-// let weekday4Element = document.querySelector("#day-four");
-// weekday4Element.innerHTML = showDay(weekday4);
-
-// let weekday5 = weekday4 < 6 ? weekday4 + 1 : 0;
-// let weekday5Element = document.querySelector("#day-five");
-// weekday5Element.innerHTML = showDay(weekday5);
+showCurrentDate()

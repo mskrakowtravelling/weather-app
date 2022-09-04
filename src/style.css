@@ -35,9 +35,6 @@
   	background:
   		linear-gradient(0deg, rgba(20, 27, 65, 1) 0%, rgba(122, 137, 194, 1) 50%, rgba(20, 27, 65, 1) 100%);
   	;
-  	/* background-image: url(../images/cloudy.jpg);
-  	background-repeat: no-repeat;
-  	background-size: cover; */
   	margin: 0;
   	padding: 25px 0;
   }
@@ -123,9 +120,6 @@
 
 
   .main-data {
-  	/* background:
-  		linear-gradient(0deg, rgba(20, 27, 65, 1) 0%, rgba(122, 137, 194, 1) 50%, rgba(20, 27, 65, 1) 100%);
-  	; */
   	background-image: url(../images/snowy.jpg);
   	background-repeat: no-repeat;
   	background-size: cover;
@@ -142,18 +136,11 @@
   .temp-today {
   	font-size: 90px;
   	font-weight: 500;
-  	/* line-height:100px ; */
   	margin: 0;
   	font-family: 'Mali', cursive;
   	padding: 0 15px;
   }
 
-  /* .temp-day-night {
-  	font-size: 35px;
-  	margin: 0;
-  	color: #121940;
-  	font-family: 'Kalam', cursive;
-  } */
   .weather-description {
   	list-style: none;
   	font-size: 20px;
@@ -187,15 +174,18 @@
   	margin: -18px 0;
   }
 
-  /* Footer - next days ---------------------------------------------------------------------------------- */
+  /* 5-day forecast ---------------------------------------------------------------------------------- */
 
   .forecast-next-days {
   	text-align: center;
   	padding: 25px;
+  	max-width: 600px;
+  	margin: 0 auto;
   }
 
   .temp-box {
-  	background-color: rgb(247, 178, 189, 0.2);
+  	background-color:
+  		rgb(247, 178, 189, 0.4);
   	border-right: solid #121940 1px;
   	border-radius: 5px;
   	padding: 20px 5px;
@@ -204,7 +194,7 @@
   }
 
   .weekday {
-  	font-size: 25px;
+  	font-size: 20px;
   }
 
   .icon {
@@ -212,23 +202,28 @@
   }
 
   .temp {
-  	font-size: 30px;
+  	font-size: 20px;
   	font-weight: 500;
   	color: #ABB4D8;
+  	text-align: center;
   }
 
-  /* .temp-night {
-  	font-size: 18px;
-  	font-weight: 600;
-  } */
+  .forecast-icon {
+  	margin: -5px;
+  }
 
-  .table {
-  	max-width: 480px;
-  	margin: 0 auto;
+  .forecast-day,
+  .forecast-night {
+  	padding: 0;
+  }
+
+  .forecast-night {
+  	color: #121940;
   }
 
   .git-hub {
   	text-align: center;
   	color: #121940;
   	font-size: large;
+  	margin-top: 10px;
   }
