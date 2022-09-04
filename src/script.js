@@ -104,17 +104,6 @@ function showTemperature(response) {
 
 }
 
-function setTemperature() {
-  let inputCity = document.querySelector("#city");
-  let apiKey = "8a5a5cc90e2c01a958e2254f16f6442f";
-  let cityName = "Bogota";
-  let units = "metric";
-  let urlPart = `https://api.openweathermap.org/data/2.5/forecast?`
-  let apiUrl = `${urlPart}q=${cityName}&units=${units}&appid=${apiKey}`;
-  axios.get(apiUrl).then(showTemperature);
-}
-window.onload = setTemperature();
-
 function searchCity(city) {
   let apiKey = "8a5a5cc90e2c01a958e2254f16f6442f";
   let units = "metric";
@@ -126,7 +115,6 @@ function handleSubmit(event) {
   event.preventDefault();
   let searchInput = document.querySelector("#search-box");
   searchCity(searchInput.value);
-
 }
 let cityForm = document.querySelector("#input-city");
 cityForm.addEventListener("submit", handleSubmit);
@@ -181,7 +169,7 @@ let fahr = document.querySelector("#fahrenheit");
 fahr.addEventListener("click", changetoFahr);
 
 let celsiusTemperature = null;
-
+searchCity("Oaxaca");
 // forecast - weekdays
 // function showDay(day) {
 //   let days = [
