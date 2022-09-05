@@ -123,7 +123,6 @@ function showTemperature(response) {
   let temperature = Math.round(response.data.main.temp);
   let temperatureElement = document.querySelector("#main-temp");
   temperatureElement.innerHTML = temperature;
-  celsiusTemperature = Math.round(response.data.main.temp);
 
   let conditions = response.data.weather[0].description;
   let conditionsElement = document.querySelector("#weather-conditions");
@@ -197,36 +196,6 @@ function findLocation(event) {
 
 let button = document.querySelector("button");
 button.addEventListener("click", findLocation);
-
-// Celsius to Fahrenheit
-function changetoFahr(event) {
-  event.preventDefault();
-
-  let mainFtemp = Math.round((celsiusTemperature * 9) / 5 + 32);
-  let mainTemp = document.querySelector("#main-temp");
-  mainTemp.innerHTML = mainFtemp;
-
-  fahr.classList.add("active");
-  cel.classList.remove("active");
-}
-
-// Fahrenheit to Celsius
-function changetoCels(event) {
-  event.preventDefault();
-
-  let mainTemp = document.querySelector("#main-temp");
-  mainTemp.innerHTML = celsiusTemperature;
-
-  fahr.classList.remove("active");
-  cel.classList.add("active");
-}
-let cel = document.querySelector("#celsius");
-cel.addEventListener("click", changetoCels);
-
-let fahr = document.querySelector("#fahrenheit");
-fahr.addEventListener("click", changetoFahr);
-
-let celsiusTemperature = null;
 
 searchCity("Oaxaca");
 showCurrentDate()

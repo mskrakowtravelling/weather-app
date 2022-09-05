@@ -120,7 +120,7 @@
 
 
   .main-data {
-  	background-image: url(../images/snowy.jpg);
+  	background-image: url(../images/sunny.jpg);
   	background-repeat: no-repeat;
   	background-size: cover;
   	margin: 0%;
@@ -159,15 +159,6 @@
 
   .card-body {
   	margin-top: 15px;
-  }
-
-  .active {
-  	color: #121940;
-  }
-
-  .active:hover {
-  	color: #121940;
-  	cursor: auto;
   }
 
   #weather-icon {
