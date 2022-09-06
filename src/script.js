@@ -110,7 +110,7 @@ function getForecast(coordinates) {
   lat = coordinates.lat;
   lon = coordinates.lon;
 
-  let apiKey = "c95d60a1e3adbeb286133f1ebebc2579";
+  let apiKey = "a43564c91a6c605aeb564c9ed02e3858";
   let units = "metric";
   let urlEnd = "https://api.openweathermap.org/data/2.5/onecall?"
   let apiUrl = `${urlEnd}lat=${lat}&lon=${lon}&units=${units}&appid=${apiKey}`;
