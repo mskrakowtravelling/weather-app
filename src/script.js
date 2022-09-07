@@ -158,6 +158,29 @@ function getForecast(coordinates) {
   axios.get(apiUrl).then(displayForecast);
 }
 
+function changeBackground(response) {
+  let background = document.querySelector(".main-data");
+  if (response === "Clear") {
+    background.style.backgroundImage = "url(../images/clear3.jpg)";
+  }
+  else if (response === "Clouds") {
+    background.style.backgroundImage = "url(../images/cloudy1.jpg)";
+    // background.style.backgroundImage = "url(https://images.pexels.com/photos/691859/pexels-photo-691859.jpeg?auto=compress&cs=tinysrgb&w=600)";
+
+  }
+  else if (response === "Snow") {
+    background.style.backgroundImage = "url(../images/snowy.jpg)";
+  }
+  else if (response === (`Drizzle` | `Rain`)) {
+    background.style.backgroundImage = "url(../images/rainy.jpg)";
+  } else if (response === `thunderstorm`) {
+    background.style.backgroundImage = "url(../images/thunderstorm.jpg)";
+  } else {
+    background.style.backgroundImage = "url(../images/cloudy.jpg)"
+  }
+
+}
+
 function showTemperature(response) {
   console.log(response.data);
   let temperature = Math.round(response.data.main.temp);
@@ -194,6 +217,12 @@ function showTemperature(response) {
   let country = countryName.of(countryCode);
   let countryElement = document.querySelector("#country");
   countryElement.innerHTML = country;
+
+  let background = response.data.weather[0].main;
+  changeBackground(`Clouds`)
+
+  console.log(response.data.weather[0].main)
+
   getForecast(response.data.coord);
   getLocalDate(response.data.coord);
 }

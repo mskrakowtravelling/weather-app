@@ -119,7 +119,7 @@
 
 
   .main-data {
-  	background-image: url(../images/sunny.jpg);
+  	/* background-image: url(../images/s.jpg); */
   	background-repeat: no-repeat;
   	background-size: cover;
   	margin: 0%;
@@ -222,4 +222,13 @@
   	color: #121940;
   	font-size: large;
   	margin-top: 10px;
+  }
+
+  ul.credits {
+  	list-style: none;
+  	text-align: left;
+  }
+
+  .photos {
+  	padding: 0 5px;
   }
