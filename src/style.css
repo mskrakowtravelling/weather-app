@@ -56,7 +56,6 @@
   	font-weight: 300;
   	color: #ABB4D8;
   	font-family: 'Kalam', cursive;
-
   }
 
   .searchbox {
@@ -148,13 +147,19 @@
 
   .conditions {
   	font-family: 'Kalam', cursive;
-  	font-size: 30px;
+  	font-size: 25px;
   	text-transform: capitalize;
   	list-style: none;
   }
 
-  .local-time {
+  .current-date {
   	font-size: 20px;
+  	text-align: right;
+  	color: #ABB4D8;
+  	font-weight: 300;
+  	color: #ABB4D8;
+  	font-family: 'Kalam', cursive;
+  	padding: 0 25px;
   }
 
   .card-body {

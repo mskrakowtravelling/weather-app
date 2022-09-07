@@ -3,7 +3,47 @@
 function addZero(t) {
   return (t < 10 ? "0" : "") + t;
 }
-function showCurrentDate(time) {
+
+function showCurrentDate() {
+  let now = new Date();
+
+  let days = [
+    "Sun",
+    "Mon",
+    "Tue",
+    "Wed",
+    "Thu",
+    "Fri",
+    "Sat",
+  ];
+  let day = days[now.getDay()];
+  let date = now.getDate();
+
+  let months = [
+    "Jan",
+    "Feby",
+    "Mar",
+    "Apr",
+    "May",
+    "Jun",
+    "Jul",
+    "Aug",
+    "Sep",
+    "Oct",
+    "Nov",
+    "Dec",
+  ];
+  let month = months[now.getMonth()];
+  let hours = addZero(now.getHours());
+  let minutes = addZero(now.getMinutes());
+
+  let fullDate = `${day}, ${date} ${month} ${hours}:${minutes}`;
+  let currentDate = document.querySelector("#current-date");
+  currentDate.innerHTML = fullDate
+  setTimeout(showCurrentDate, 1000);
+}
+
+function showLocalTime(time) {
   let timeZoneName = time.data.timezone;
 
   function convertTZ(date, tzString) {
@@ -43,8 +83,8 @@ function showCurrentDate(time) {
   let minutes = addZero(now.getMinutes());
 
   let fullDate = `${day}, ${date} ${month} ${hours}:${minutes}`;
-  let h2 = document.querySelector("h2");
-  h2.innerHTML = fullDate
+  let localTime = document.querySelector("#local-time");
+  localTime.innerHTML = fullDate
 }
 
 
@@ -57,7 +97,7 @@ function getLocalDate(coordinates) {
   let urlEnd = "https://api.openweathermap.org/data/2.5/onecall?"
   let apiUrl = `${urlEnd}lat=${lat}&lon=${lon}&units=${units}&appid=${apiKey}`;
 
-  axios.get(apiUrl).then(showCurrentDate);
+  axios.get(apiUrl).then(showLocalTime);
 
 }
 // API key - weather--------------------------------------------------------------------------
