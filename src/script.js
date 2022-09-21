@@ -219,7 +219,7 @@ function showTemperature(response) {
   countryElement.innerHTML = country;
 
   let background = response.data.weather[0].main;
-  changeBackground("background")
+  changeBackground(background)
 
   console.log(response.data.weather[0].main)
 
