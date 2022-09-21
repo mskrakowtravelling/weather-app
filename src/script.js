@@ -130,12 +130,12 @@ function displayForecast(response) {
               <div class="weekday">${showWeekday(forecastDay.dt)}</div>
               <img
                 src="http://openweathermap.org/img/wn/${forecastDay.weather[0].icon}@2x.png"
-                alt=""
+                alt="weather icon"
                 width="55"
                 class="forecast-icon"
               />
               <div class="temp">
-                <span class="forecast-day">${Math.round(forecastDay.temp.day)}°<span class="forecast-night"
+                <span class="forecast-day" title="Day">${Math.round(forecastDay.temp.day)}°<span class="forecast-night" title="Night"
                 > | ${Math.round(forecastDay.temp.night)}°
               </div>
             </div> `;
@@ -219,7 +219,7 @@ function showTemperature(response) {
   countryElement.innerHTML = country;
 
   let background = response.data.weather[0].main;
-  changeBackground(background)
+  changeBackground(backgrou)
 
   console.log(response.data.weather[0].main)
 
