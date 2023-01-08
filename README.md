@@ -8,5 +8,5 @@ Features:
 - API from OpenWeather is used to provida weather data.
 
 Improvements plan:
-- I'm planning to use date format from a library to replace date format written in JS
-- 
+- use date format from a library to replace date format written in JS
+- change the input placeholder using bootstrap so that it doesn't disappear 
